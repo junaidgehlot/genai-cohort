@@ -18,8 +18,3 @@ A minimal Python utility to **encode** and **decode** text using ASCII values. T
 - **`start()`**  
   Interactive CLI that asks the user whether they want to encode or decode.
 
----
-
-## 🧪 Example
-
-### Encoding
