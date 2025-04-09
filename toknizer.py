@@ -6,12 +6,12 @@ def vocab():
 
 def encoder(sentence):
     vocab_tokens, _ = vocab()  
-    tokens = [vocab_tokens[char] for char in sentence if char in vocab_tokens]
+    tokens = [vocab_tokens[char] for char in sentence if char in vocab_tokens else ' ']
     return tokens
 
 def decoder(tokens):
     _, token_vocab = vocab() 
-    sentence = ''.join([token_vocab[token] for token in tokens if token in token_vocab]) 
+    sentence = ''.join([token_vocab[token] for token in tokens if token in token_vocab else ' ']) 
     return sentence
 
 def start():
