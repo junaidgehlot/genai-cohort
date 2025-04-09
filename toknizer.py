@@ -4,14 +4,14 @@ def vocab():
     token_vocab = {ascii_val: char for char, ascii_val in vocab_tokens.items()}  
     return vocab_tokens, token_vocab
 
+VOCAB_TOKENS, TOKEN_VOCAB = vocab()
+
 def encoder(sentence):
-    vocab_tokens, _ = vocab()  
-    tokens = [vocab_tokens[char] for char in sentence if char in vocab_tokens else ' ']
+    tokens = [VOCAB_TOKENS[char] if char in VOCAB_TOKENS else ord(' ') for char in sentence]
     return tokens
 
 def decoder(tokens):
-    _, token_vocab = vocab() 
-    sentence = ''.join([token_vocab[token] for token in tokens if token in token_vocab else ' ']) 
+    sentence = ''.join([TOKEN_VOCAB[token] if token in TOKEN_VOCAB else ' ' for token in tokens])
     return sentence
 
 def start():
