@@ -45,6 +45,7 @@ user_input = input(">")
 messages.append( {"role": "user", "content": user_input})
 
 while True:  
+   
     response = client.chat.completions.create(
         model="gpt-4o",
         response_format={"type": 'json_object'},
